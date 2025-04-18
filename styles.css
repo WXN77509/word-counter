@@ -146,8 +146,9 @@ article section {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding: 1rem;
-    max-width: 350px;
-    width: 100%;
+    max-width: 370px;
+    width: auto;
+    margin: 0 auto;
     font-size: 14px;
 }
 
@@ -155,34 +156,43 @@ article section dl {
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
+    gap: 10px;
 }
 
 article section dl:last-of-type {
-    border-top: 1px solid grey;
     padding: 1rem 0 0 0;
     margin-bottom: 0;
 }
 
 dl {
-    display: flex;
-    flex-direction: column;
     width:100%;
-    gap: 10px;
     margin: 0;
+}
+
+hr {
+    border: none;
+    background-color: rgb(255, 255, 255, 0.14);
+    width: 1px;
+    height: 100%;
+    margin: 0;
+    align-self: center;
+}
+
+hr#separator {
+    background-color: rgb(255, 255, 255, 0.14);
+    height: 1px;
+    width: 100%;
 }
 
 dl div {
-    flex: 1;
+    width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     margin: 0;
-    border-right: 1px solid grey;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
 }
-
-dl div:last-of-type {border-right: none;}
 
 dt,dd {
     text-align: center;
