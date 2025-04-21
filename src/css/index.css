@@ -360,6 +360,7 @@ main section#keywords div {
 }
 
 main section#keywords div p {
+    width: 100%;
     text-align: center;
 }
 
