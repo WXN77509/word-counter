@@ -1,5 +1,5 @@
-const VOYELLES = ['a', 'e', 'i', 'o', 'u', 'y', 'é', 'è', 'ê', 'ë', 'à', 'â', 'ä', 'ô', 'ö', 'ù', 'û', 'ü', 'ï', 'î'];
-const CONSONNES = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm','n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
+const VOWELS = ['a', 'e', 'i', 'o', 'u', 'y', 'é', 'è', 'ê', 'ë', 'à', 'â', 'ä', 'ô', 'ö', 'ù', 'û', 'ü', 'ï', 'î'];
+const CONSONANTS = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm','n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
 const VOCAL_GROUPS = ['oi', 'ou', 'an', 'en', 'on', 'in', 'un', 'am', 'em', 'om', 'um','ain', 'ein', 'oin', 'ien', 'eu', 'au', 'ai', 'ei'];
 
 const POINTS = ['.', '!', '?', '...'];
@@ -56,20 +56,20 @@ function getNumberOfParagraph(text: string): number {
     return paragraphs.length;
 }
 
-function getNumberOfVoyelles(text: string): number {
-    let voyellesCount =0;
+function getNumberOfVowels(text: string): number {
+    let vowelsCount =0;
     for (const char of text.trim().toLowerCase()) {
-        if (VOYELLES.includes(char)) voyellesCount++;
+        if (VOWELS.includes(char)) vowelsCount++;
     }
-    return voyellesCount;
+    return vowelsCount;
 }
 
-function getNumberOfConsonnes(text: string): number {
-    let consonnesCount =0;
+function getNumberOfConsonants(text: string): number {
+    let consonantsCount =0;
     for (const char of text.trim().toLowerCase()) {
-        if (CONSONNES.includes(char)) consonnesCount++;
+        if (CONSONANTS.includes(char)) consonantsCount++;
     }
-    return consonnesCount;
+    return consonantsCount;
 }
 
 function getKeywords(text: string): [string, number, number][] {
