@@ -10,7 +10,7 @@
         <header>
             <nav>
                 <ul>
-                    <li>Word Counter</li>
+                    <li>Save your work. It's free!</li>
                     <li>
                         <a href="login.html" target="_blank">Log in</a>
                         <a href="signup.html" target="_blank" class="red">Sign up</a>
@@ -67,62 +67,64 @@
                     </dl>
                 </section>
                 <div class="last">
-                    <a href="https://fr.pornhub.com/view_video.php?viewkey=674a6b8c03e22">Obtenir pour Chrome</a>
+                    <a href="https://fr.pornhub.com/view_video.php?viewkey=674a6b8c03e22">Get for Chrome</a>
                     <p class="last">Instant reading and speaking time estimates, too!</p>
                 </div>
             </article>
 
             <div class="container">
-                <div id="textarea" aria-label="Text input for counter">
-                    <textarea id="text-input" name="text" aria-describedby="stats" placeholder="Type or paste your text or URL here"></textarea>
-                    <button><img src="../../icons/close.svg" alt="icon of close"></button>
-                    <button><img src="../../icons/add.svg" alt="icon of add"></button>
-                    <img id="star" src="../../icons/star.webp" alt="picture of star">
+                <div id="textarea-zone">
+                    <div id="textarea" aria-label="Text input for counter">
+                        <textarea id="text-input" name="text" aria-describedby="stats" placeholder="Type or paste your text or URL here"></textarea>
+                        <button><img src="../../icons/close.svg" alt="icon of close"></button>
+                        <button><img src="../../icons/add.svg" alt="icon of add"></button>
+                        <img id="star" src="../../icons/star.webp" alt="picture of star">
+                    </div>
                 </div>
 
                 <div id="container-2">
                     <section id="stats">
                         <dl>
-                            <div>
+                            <div id="div-word">
                                 <dt>0</dt>
                                 <dd>Word</dd>
                             </div>
                             <hr>
-                            <div>
+                            <div id="div-character">
                                 <dt>0</dt>
-                                <dd>Characters</dd>
+                                <dd>Character</dd>
                             </div>
                             <hr>
-                            <div id="white-space">
+                            <div id="div-without-space">
                                 <dt>0</dt>
                                 <dd>Character without space</dd>
                             </div>
                         </dl>
                         <hr>
                         <dl>
-                            <div>
+                            <div id="div-syllable">
                                 <dt>0</dt>
                                 <dd>Syllable</dd>
                             </div>
                             <hr>
-                            <div>
+                            <div id="div-sentence">
                                 <dt>0</dt>
-                                <dd>Sentences</dd>
+                                <dd>Sentence</dd>
                             </div>
                             <hr>
-                            <div>
+                            <div id="div-paragraph">
                                 <dt>0</dt>
-                                <dd>Paragraphs</dd>
+                                <dd>Paragraph</dd>
                             </div>
                         </dl>
                         <hr>
                         <dl id="last">
-                            <div>
+                            <div id="div-vowel">
                                 <dt>0</dt>
                                 <dd>Vowel</dd>
                             </div>
                             <hr>
-                            <div>
+                            <div id="div-consonant">
                                 <dt>0</dt>
                                 <dd>Consonant</dd>
                             </div>
@@ -137,6 +139,6 @@
                 </div>
             </div>
         </main>
-        <script type="module" src="script.js"></script>
+        <script type="module" src="../js/index.js"></script>
     </body>
 </html>
