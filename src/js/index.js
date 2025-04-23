@@ -1,5 +1,6 @@
 import * as lib from './lib.js';
 const textAreaZone = document.getElementById('textarea-zone');
+const div_textArea = document.getElementById('textarea');
 const textArea = document.getElementById('text-input');
 const closeButton = document.querySelector('#textarea button:nth-of-type(1)');
 const addButton = document.querySelector('#textarea button:nth-of-type(2)');
@@ -56,8 +57,7 @@ closeButton.addEventListener('click', () => {
     updateStats('');
 });
 addButton.addEventListener('click', () => {
-    const newTextArea = document.createElement('textarea');
-    newTextArea.placeholder = 'Nouveau texte...';
+    const newTextArea = div_textArea.cloneNode(true);
     textAreaZone.appendChild(newTextArea);
 });
 function updateStats(text) {
@@ -92,18 +92,29 @@ function updateStats(text) {
     const keywords = lib.getKeywords(text);
     keywordsDiv.innerHTML = '';
     if (keywords.length === 0) {
+        keywordsSection.style.color = '#B7B7B7';
         keywordsSection.style.backgroundColor = '';
-        keywordsDivP.textContent = 'Type or paste your text or URL to see the most used keywords';
+        keywordsH2.style = 'font-size: 18px;margin: 0;border:none;padding: 0.5rem 0 0 0';
+        const p = document.createElement('p');
+        p.textContent = 'Type or paste your text or URL to see the most used keywords';
+        keywordsDiv.appendChild(p);
+        keywordsDiv.style = 'display: flex;height: 100%;align-items: center;justify-content: center;';
     }
     else {
         keywordsSection.style.backgroundColor = 'rgba(255, 255, 255, 0.14)';
+        keywordsSection.style.color = '#E1E1E1';
+        keywordsH2.style = 'font-size: 18px;margin: 0;border-bottom: 1px solid rgb(255, 255, 255, 0.14);padding: 0.5rem 0 1rem 0';
         const ul = document.createElement('ul');
         keywords.forEach(([word, count, percent]) => {
             const li = document.createElement('li');
-            li.textContent = `${word}: ${count} (${percent}%)`;
+            li.innerHTML = `<span>${word}</span><div style="display:flex;gap:1rem;flex-direction:row;"><span>${count}</span><div><span style="color: #B7B7B7;">${percent}%</span></div></div>`;
+            li.style = 'padding:0.5rem 0;border-bottom: 1px solid rgb(255, 255, 255, 0.14);display: flex;justify-content: space-between;width:100%;font-size: 18px;';
             ul.appendChild(li);
+            ul.style.listStyle = 'none';
+            ul.style = 'list-style:none;display: flex;justify-content:start;align-items:start;flex-direction:column;width:100%;margin: 0;padding: 0;height:100%';
         });
         keywordsDiv.appendChild(ul);
+        keywordsDiv.style = 'display: flex;height: 100%;';
     }
 }
 textArea.addEventListener('input', () => {

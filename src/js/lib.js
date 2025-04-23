@@ -30,7 +30,8 @@ export function getNumberOfSyllables(text) {
     let syllableCount = matches ? matches.length : 0;
     const words = trimmed.split(/\s+/);
     for (const word of words) {
-        if (word.toLowerCase().endsWith('e') &&
+        if (word.length > 2 &&
+            word.toLowerCase().endsWith('e') &&
             !['ée', 'ie', 'ue', 'oe'].some(ending => word.toLowerCase().endsWith(ending))) {
             syllableCount--;
         }

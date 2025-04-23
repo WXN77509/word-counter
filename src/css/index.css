@@ -136,7 +136,7 @@ article div#article p:first-of-type {
 }
 
 .text-bold {font-weight:bold;}
-.red-text {background-color:#E15A46;color: transparent;width: 2px;height: 22px;}
+.red-text {background-color:#E15A46;color: #E15A46;width: 2px;height: 22px;}
 
 article section {
     background-color: #555555;
@@ -321,7 +321,6 @@ main div section#stats {
     border: 1px solid rgb(255, 255, 255, 0.14);
     border-radius: 8px;
     padding: 0;
-
 }
 
 main div section#stats dl div {
@@ -353,14 +352,16 @@ main div section#stats dl#last {
 main section#keywords {
     border: 1px solid rgb(255, 255, 255, 0.14);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0.5rem 1rem 0;
     display: flex;
     flex-direction: column;
     min-height: 304px;
 }
 
 main section#keywords h2 {
-    margin: 0 0 2rem 0;
+    font-size: 18px;
+    margin: 0;
+    padding-top: 0.5rem;
 }
 
 main section#keywords div {
@@ -377,13 +378,15 @@ main section#keywords div p {
 }
 
 @media (max-width: 1129px) {
-    header nav ul {justify-content: space-around;}
+    header nav ul {justify-content: space-between;}
     article {display:none;}
+    main div.container {flex-direction: column;}
+    main div.container div#container-2 {flex-direction: row;}
+    main section#keywords,main div section#stats {width: 50%;}
 }
 
 @media (max-width:768px) {
     header nav ul {justify-content: space-between}
-    main div.container {
-        flex-direction: column;
-    }
+    main div.container,main div.container div#container-2 {flex-direction: column;}
+    main section#keywords,main div section#stats {width: 100%;}
 }
